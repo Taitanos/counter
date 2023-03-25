@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import InputCount from "./InputCount";
+import ButtonCount from "./ButtonCount";
 
 function App() {
 
@@ -9,16 +10,7 @@ function App() {
     return (
         <div className={"app"}>
             <InputCount count={count}/>
-            <div className={"button"}>
-                <button onClick={() => {
-                    setCount(count + 1)
-                }}>Add
-                </button>
-                <button onClick={() => {
-                    setCount(0)
-                }}>Reset
-                </button>
-            </div>
+            <ButtonCount count={count} setCount={setCount}/>
         </div>
     );
 }
