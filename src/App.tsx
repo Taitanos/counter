@@ -1,16 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import InputCount from "./InputCount";
-import ButtonCount from "./ButtonCount";
+import Counter from "./Counter/Counter";
 
 function App() {
-
-    const [count, setCount] = useState(0);
-
     return (
         <div className={"app"}>
-            <InputCount count={count}/>
-            <ButtonCount count={count} setCount={setCount}/>
+            <Counter/>
         </div>
     );
 }

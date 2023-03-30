@@ -1,4 +1,5 @@
 import React from "react";
+import s from './ButtonCount.module.css';
 
 type ButtonCountTypeProps = {
     count: number;
@@ -12,9 +13,9 @@ function ButtonCount(props: ButtonCountTypeProps) {
 
 
     return (
-        <div className={"button"}>
-            <button onClick={add}>Add</button>
-            <button onClick={reset}>Reset</button>
+        <div className={s.buttons}>
+            <button className={s.button} onClick={add}>Add</button>
+            <button className={s.button} onClick={reset}>Reset</button>
         </div>
     )
 }
