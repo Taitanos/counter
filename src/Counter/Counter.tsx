@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import InputCount from "./InputCount";
-import ButtonCount from "./ButtonCount";
+import InputCount from "./InputCount/InputCount";
+import ButtonCount from "./ButtonCount/ButtonCount";
 import s from './Counter.module.css'
 
 function Counter () {
