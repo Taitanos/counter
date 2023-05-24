@@ -9,3 +9,13 @@
     padding: 20px;
     background-color: aqua;
 }
+
+.item a {
+    color: #296161;
+    text-decoration: none;
+}
+
+.item a.activeLink {
+    color: #ce1a6e;
+    font-weight: bold;
+}
