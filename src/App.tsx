@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
-import Counter from "./Counter/Counter";
-import Stopwatch from "./Stopwatch/Stopwatch";
-import ClickBox from "./ClickBox/ClickBox";
+import Header from "./Header/Header";
+import Navbar from "./Navbar/Navbar";
 
 function App() {
     return (
-        <div className={"app"}>
-            {/*<Counter/>*/}
-            {/*<Stopwatch/>*/}
-            <ClickBox />
+        <div className={"app-wrapper"}>
+            <Header/>
+            <Navbar/>
+            <div className={"app-wrapper-content"}>
+
+            </div>
         </div>
     );
 }
