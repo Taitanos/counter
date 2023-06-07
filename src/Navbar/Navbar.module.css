@@ -11,12 +11,13 @@
 
 }
 
-.item a {
+.item {
     color: #296161;
     text-decoration: none;
 }
 
-.item a.activeLink {
+.activeLink {
     color: #ce1a6e;
     font-weight: bold;
+    text-decoration: none;
 }
