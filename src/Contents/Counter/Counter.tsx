@@ -1,12 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import s from "./Counter.module.css";
 import CounterUI from "./CounterUI/CounterUI";
+import CounterSet from "./CounterSet/CounterSet";
 
 
-function Counter () {
+function Counter() {
+
     return (
         <div className={s.counter}>
-            <CounterUI/>
+            {/*<CounterUI/>*/}
+            <CounterSet/>
         </div>
     )
 }

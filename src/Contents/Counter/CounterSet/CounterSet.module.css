@@ -1,0 +1,19 @@
+.counterUI {
+    display: grid;
+    grid-template-areas: "i i" "s s" "b b";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.input1 {
+    margin-top: 10px;
+    grid-area: i;
+}
+
+.input2 {
+    grid-area: s;
+}
+
+.button {
+    grid-area: b;
+}

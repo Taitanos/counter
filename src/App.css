@@ -9,5 +9,9 @@
 }
 
 .app-wrapper-content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
     grid-area: c;
 }

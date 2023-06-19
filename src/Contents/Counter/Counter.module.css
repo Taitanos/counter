@@ -1,6 +1,6 @@
 .counter {
-    margin: auto;
-    width: 230px;
-    height: 120px;
+    width: 280px;
+    height: 150px;
     border: 1px solid black;
+    border-radius: 25px;
 }

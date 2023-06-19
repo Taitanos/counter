@@ -1,7 +1,8 @@
 .buttons {
-    margin-left: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .button {
-    margin: 5px;
+    margin: 12px;
 }

@@ -9,7 +9,7 @@ type InputCountPropsType = {
 function InputCount(props:InputCountPropsType) {
     return (
         <div className={s.input}>
-            <input value={props.count}/>
+            <input type={"number"} value={props.count}/>
         </div>
     );
 }
