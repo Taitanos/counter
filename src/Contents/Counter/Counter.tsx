@@ -8,8 +8,8 @@ function Counter() {
 
     return (
         <div className={s.counter}>
-            {/*<CounterUI/>*/}
-            <CounterSet/>
+            <CounterUI/>
+            {/*<CounterSet/>*/}
         </div>
     )
 }

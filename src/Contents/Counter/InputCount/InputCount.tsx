@@ -7,9 +7,12 @@ type InputCountPropsType = {
 
 
 function InputCount(props:InputCountPropsType) {
+
+    let newValueInput = props.count
+
     return (
         <div className={s.input}>
-            <input type={"number"} value={props.count}/>
+            <input type={"number"} value={newValueInput}/>
         </div>
     );
 }
