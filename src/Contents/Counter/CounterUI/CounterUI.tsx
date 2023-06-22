@@ -1,30 +1,27 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import s from "./CounterUI.module.css";
 
+type CounterUIPropsType = {
+    startCount: number
+    setStartCount: (setStartCount: number) => void
+    onChangeButton: () => void
+}
 
-function CounterUI () {
-    const [count, setCount] = useState<number>(()=>{
-        return Number(localStorage.getItem('counterValue')) || 0
-    })
 
-
-    useEffect( () => {
-        localStorage.setItem('counterValue', JSON.stringify(count))
-    }, [count])
+function CounterUI (props: CounterUIPropsType) {
 
     const add = () => {
-        setCount(count + 1)
+        props.setStartCount(props.startCount + 1)
     };
-    const reset = () => {setCount(0)};
+    const reset = () => {props.setStartCount(0)};
     const set = () => {
-
-    }
-
+        props.onChangeButton()
+    };
 
         return (
         <div className={s.counterUI}>
             <div className={s.inputs}>
-                <input className={s.input} value={count}/>
+                <div className={s.input} >{props.startCount}</div>
             </div>
             <div className={s.buttons}>
                 <button className={s.button} onClick={add}>Add</button>

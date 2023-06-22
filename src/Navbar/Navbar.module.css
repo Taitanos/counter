@@ -1,8 +1,7 @@
 .nav {
     display: grid;
     grid-area: n;
-    grid-template-rows: 250px 150px;
-    grid-gap: 15px;
+    grid-template-rows: 400px;
 }
 
 .navContent {

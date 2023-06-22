@@ -1,19 +1,40 @@
 .counterUI {
     display: grid;
-    grid-template-areas: "i i" "s s" "b b";
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "i" "b";
+    grid-template-rows: 115px 50px;
 }
 
-.input1 {
-    margin-top: 10px;
+.inputs {
     grid-area: i;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
 
-.input2 {
-    grid-area: s;
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.span {
+    padding: 5px;
+}
+
+.input {
+    width: 100px;
+    height: 25px;
+    padding: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
 }
 
 .button {
     grid-area: b;
+    margin: 12px;
+    width: 50px;
+    height: 30px;
 }

@@ -1,8 +1,7 @@
 .counterUI {
     display: grid;
     grid-template-areas: "i" "b";
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 15px;
+    grid-template-rows: 115px 50px;
 }
 
 .inputs {
@@ -18,6 +17,7 @@
     height: 50px;
     text-align: center;
     font-size: 35px;
+    border: 1px solid black;
 }
 
 .buttons {
