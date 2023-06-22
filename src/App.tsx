@@ -1,25 +1,27 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import InputCount from "./InputCount";
+import Header from "./Header/Header";
+import Navbar from "./Navbar/Navbar";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Counter from "./Contents/Counter/Counter";
+import Stopwatch from "./Contents/Stopwatch/Stopwatch";
+import ClickBox from "./Contents/ClickBox/ClickBox";
 
 function App() {
-
-    const [count, setCount] = useState(0);
-
     return (
-        <div className={"app"}>
-            <InputCount count={count}/>
-            <div className={"button"}>
-                <button onClick={() => {
-                    setCount(count + 1)
-                }}>Add
-                </button>
-                <button onClick={() => {
-                    setCount(0)
-                }}>Reset
-                </button>
+        <BrowserRouter>
+            <div className={"app-wrapper"}>
+                <Header/>
+                <Navbar/>
+                <div className={"app-wrapper-content"}>
+                    <Routes>
+                        <Route path={'/counter'} element={<Counter/>}/>
+                        <Route path={'/stopwatch'} element={<Stopwatch/>}/>
+                        <Route path={'/clickbox'} element={<ClickBox/>}/>
+                    </Routes>
+                </div>
             </div>
-        </div>
+        </BrowserRouter>
     );
 }
 
