@@ -4,25 +4,19 @@ import s from "./CounterSet.module.css";
 type CounterSetTypeProps = {
     startCount: number
     endCount: number
-    setStartCount: (setStartCount: number) => void
-    setEndCount: (setEndCount: number) => void
-    onChangeStartValue: (onChangeStartValue:number) => void
-    onChangeEndValue: (onChangeEndValue:number) => void
+    onChangeStartValue: (startValue:number, endValue: number) => void
+    onChangeEndValue: (startValue:number, endValue: number) => void
     onChangeButton: () => void
 }
 
 function CounterSet (props: CounterSetTypeProps) {
 
     const onChangeStartValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        props.onChangeStartValue(+e.currentTarget.value);
+        props.onChangeStartValue(+e.currentTarget.value, props.endCount);
     }
 
     const onChangeEndValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        props.onChangeEndValue(+e.currentTarget.value);
-    }
-
-    const set = () => {
-        props.onChangeButton()
+        props.onChangeEndValue(props.startCount, +e.currentTarget.value);
     }
 
     return (
@@ -38,7 +32,7 @@ function CounterSet (props: CounterSetTypeProps) {
                 </div>
             </div>
             <div className={s.buttons}>
-                <button className={s.button} onClick={set}>Set</button>
+                <button className={s.button} onClick={props.onChangeButton}>Set</button>
             </div>
         </div>
     );
