@@ -23,11 +23,11 @@ function CounterSet (props: CounterSetTypeProps) {
         <div className={s.counterUI}>
             <div className={s.inputs}>
                 <div className={s.content}>
-                    <span className={s.span}>Start Value</span>
+                    <div className={s.span}>Start Value</div>
                     <input type={"number"} className={s.input} value={props.startCount} onChange={onChangeStartValueHandler}/>
                 </div>
                 <div className={s.content}>
-                    <span className={s.span}>End Value</span>
+                    <div className={s.span}>Max Value</div>
                     <input type={"number"} className={s.input} value={props.endCount} onChange={onChangeEndValueHandler}/>
                 </div>
             </div>
