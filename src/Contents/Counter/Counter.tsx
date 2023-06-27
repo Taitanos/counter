@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import s from "./Counter.module.css";
 import CounterUI from "./CounterUI/CounterUI";
 import CounterSet from "./CounterSet/CounterSet";
+import MessageErrorText from "./MessageErrorText/MessageErrorText";
 
 
 function Counter() {
@@ -17,14 +18,20 @@ function Counter() {
         return Number(localStorage.getItem('counter')) || 0
     })
     const [setting, setSetting] = useState<boolean>(true)
+    const [error, setError] = useState<boolean>(false)
 
     // Смена панели по кнопке
     let onChangeButton = () => {
         setSetting(!setting)
     }
 
-    //Изменение начального и конечного значения по нажатию кнопки
-    let onChangeStartValue = (startCount: number, endCount: number ) => {
+    // Вывод ошибки при срабатывании
+    let statusError = () => {
+
+    }
+
+    // Изменение начального и конечного значения по нажатию кнопки
+    let onChangeStartValue = (startCount: number, endCount: number) => {
         if (startCount < endCount && startCount >= 0) {
             setStartCount(startCount)
             setCounter(startCount)
@@ -51,12 +58,18 @@ function Counter() {
 
     //Итерация счетчика
     const add = () => {
-            if (startCount < endCount && counter < endCount) {
-                return setCounter(counter + 1);
-            }
+        if (counter === endCount-1 || counter > endCount) {
+            setCounter(counter + 1)
+            setError(true)
+        } else {
+            setCounter(counter + 1)
+        }
     };
     // Сброс значение счетчика на стартовое значение
-    const reset = () => {setCounter(startCount)};
+    const reset = () => {
+        setCounter(startCount)
+        setError(false)
+    };
     // Смена панели UI или Set
     const set = () => {
         onChangeButton()
@@ -66,16 +79,18 @@ function Counter() {
         <div className={s.counter}>
             {setting ?
                 <CounterUI counter={counter}
+                           error={error}
                            add={add}
                            reset={reset}
                            onChangeButton={set}
                 />
-                : <CounterSet startCount={startCount}
+                : <MessageErrorText/> /*<CounterSet startCount={startCount}
                               endCount={endCount}
+                              error={error}
                               onChangeStartValue={onChangeStartValue}
                               onChangeEndValue={onChangeEndValue}
                               onChangeButton={set}
-                />}
+                />*/}
         </div>
     )
 }

@@ -5,9 +5,35 @@
 }
 
 .navContent {
-    padding: 20px;
+    padding: 25px;
     background-color: aqua;
 
+}
+.linkName {
+
+}
+
+.button {
+    margin: 15px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #558cb7;
+}
+.button:focus-visible {
+    box-shadow: 0 0 0 3px lightskyblue;
+}
+.button:hover {
+    border-color: transparent;
+    background-color: #4986a1;
+    color: #fff;
+}
+.button:active {
+    border-color: #6f9cbc !important;
+    background-color: #367089 !important;
 }
 
 .item {
@@ -16,7 +42,7 @@
 }
 
 .activeLink {
-    color: #ce1a6e;
-    font-weight: bold;
+    color: #fff;
+   /* font-weight: bold;*/
     text-decoration: none;
 }

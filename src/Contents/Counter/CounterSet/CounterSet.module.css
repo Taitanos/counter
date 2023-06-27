@@ -1,11 +1,9 @@
 .counterUI {
     display: grid;
-    grid-template-areas: "i" "b";
     grid-template-rows: 170px 90px;
 }
 
 .inputs {
-    grid-area: i;
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -20,7 +18,7 @@
     padding: 5px;
 }
 
-.span {
+.text {
     padding: 5px;
     font-size: 25px;
     color: #65a3be;
@@ -46,19 +44,15 @@
 }
 
 .button {
-    grid-area: b;
     box-sizing: border-box;
-    margin: 12px;
-    width: 50px;
-    height: 30px;
+    margin: 10px;
+    width: 60px;
+    height: 35px;
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 10px;
     font-size: 14px;
     color: #fff;
-    background-color: #65a3be;
-    cursor: pointer;
-    appearance: none;
-    touch-action: manipulation;
+    background-color: #558cb7;
 }
 .button:focus-visible {
     box-shadow: 0 0 0 3px lightskyblue;
@@ -72,8 +66,14 @@
     border-color: #6f9cbc !important;
     background-color: #367089 !important;
 }
-.button:disabled {
-    background-color: #558cb7;
+.disabled {
+    box-sizing: border-box;
+    margin: 10px;
+    width: 60px;
+    height: 35px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
     color: #fff;
-    pointer-events: none;
+    background-color: #65a3be;
 }

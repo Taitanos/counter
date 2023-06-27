@@ -3,6 +3,7 @@ import s from "./CounterUI.module.css";
 
 type CounterUIPropsType = {
     counter:number
+    error: boolean
     add: () => void
     reset: () => void
     onChangeButton: () => void
@@ -17,9 +18,9 @@ function CounterUI (props: CounterUIPropsType) {
                 <div className={s.input}>{props.counter}</div>
             </div>
             <div className={s.buttons}>
-                <button className={s.button} onClick={props.add}>Add</button>
+                <button disabled={props.error} className={props.error ? s.disabled : s.button} onClick={props.add}>Add</button>
                 <button className={s.button} onClick={props.reset}>Reset</button>
-                <button className={s.button} onClick={props.onChangeButton}>Set</button>
+                <button  className={s.button} onClick={props.onChangeButton}>Set</button>
             </div>
         </div>
     );
