@@ -84,13 +84,14 @@ function Counter() {
                            reset={reset}
                            onChangeButton={set}
                 />
-                : <MessageErrorText/> /*<CounterSet startCount={startCount}
+                :  <CounterSet startCount={startCount}
                               endCount={endCount}
                               error={error}
                               onChangeStartValue={onChangeStartValue}
                               onChangeEndValue={onChangeEndValue}
                               onChangeButton={set}
-                />*/}
+                />
+            }
         </div>
     )
 }
