@@ -1,24 +1,18 @@
-.counterUI {
+.container {
     display: grid;
     grid-template-rows: 170px 90px;
 }
 
-.inputs {
+.message {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     padding: 10px;
     border: 3px solid #65a3be;
     border-radius: 15px;
     margin: 15px;
-}
-
-.input {
-    width: 200px;
-    height: 100px;
+    color: lemonchiffon;
+    font: italic 17px "Fira Sans", serif;
     text-align: center;
-    font-size: 70px;
-    color: #65a3be;
 }
 
 .buttons {
@@ -51,15 +45,4 @@
 .button:active {
     border-color: #6f9cbc !important;
     background-color: #367089 !important;
-}
-.disabled {
-    box-sizing: border-box;
-    margin: 10px;
-    width: 60px;
-    height: 35px;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #65a3be;
 }

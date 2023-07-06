@@ -1,14 +1,6 @@
 .counterUI {
     display: grid;
-    grid-template-areas: "i" "b";
-    grid-template-rows: 115px 50px;
-}
-
-.inputs {
-    grid-area: i;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+    grid-template-rows: 170px 90px;
 }
 
 .content {
@@ -17,24 +9,71 @@
     padding: 5px;
 }
 
-.span {
-    padding: 5px;
+.inputs {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 3px solid #65a3be;
+    border-radius: 15px;
+    margin: 15px;
 }
 
 .input {
     width: 100px;
     height: 25px;
     padding: 5px;
+    background-color: white;
+    border: 2px solid #65a3be;
+    text-align: center;
+    font-size: 25px;
+    color: #65a3be;
+}
+
+.text {
+    padding: 5px;
+    font-size: 25px;
+    color: #65a3be;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
+    border: 3px solid #65a3be;
+    border-radius: 15px;
+    margin: 15px;
 }
 
 .button {
-    grid-area: b;
-    margin: 12px;
-    width: 50px;
-    height: 30px;
+    box-sizing: border-box;
+    margin: 10px;
+    width: 60px;
+    height: 35px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #558cb7;
+}
+.button:focus-visible {
+    box-shadow: 0 0 0 3px lightskyblue;
+}
+.button:hover {
+    border-color: transparent;
+    background-color: #4986a1;
+    color: #fff;
+}
+.button:active {
+    border-color: #6f9cbc !important;
+    background-color: #367089 !important;
+}
+.disabled {
+    box-sizing: border-box;
+    margin: 10px;
+    width: 60px;
+    height: 35px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #65a3be;
 }
