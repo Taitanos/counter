@@ -7,6 +7,7 @@ type CounterSetTypeProps = {
     startCount: number
     endCount: number
     error: boolean
+    errorMessage: boolean
     onChangeStartValue: (startValue: number, endValue: number) => void
     onChangeEndValue: (startValue: number, endValue: number) => void
     onChangeButton: () => void
@@ -25,7 +26,7 @@ function CounterSet(props: CounterSetTypeProps) {
 
     return (
         <div >
-            {props.error ? <MessageErrorText statusError={props.statusError}/> :
+            {props.errorMessage ? <MessageErrorText statusError={props.statusError}/> :
                 <div className={s.counterUI}>
                     <div className={s.inputs}>
                         <div className={s.content}>

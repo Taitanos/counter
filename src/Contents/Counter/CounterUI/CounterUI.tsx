@@ -15,7 +15,7 @@ function CounterUI (props: CounterUIPropsType) {
         return (
         <div className={s.counterUI}>
             <div className={s.inputs}>
-                <div className={s.input}>{props.counter}</div>
+                <div className={props.error ?s.inputDisabled : s.input}>{props.counter}</div>
             </div>
             <div className={s.buttons}>
                 <button disabled={props.error} className={props.error ? s.disabled : s.button} onClick={props.add}>Add</button>

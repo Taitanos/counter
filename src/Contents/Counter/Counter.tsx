@@ -18,6 +18,7 @@ function Counter() {
     })
     const [setting, setSetting] = useState<boolean>(true)
     const [error, setError] = useState<boolean>(false)
+    const [errorMessage, setErrorMessage] = useState<boolean>(false)
 
     // Смена панели по кнопке
     let onChangeButton = () => {
@@ -26,21 +27,23 @@ function Counter() {
 
     // Вывод ошибки при срабатывании
     let onChangeStatusError = () => {
-        setError(!error)
+        setErrorMessage(!errorMessage)
     }
 
     // Изменение начального и конечного значения по нажатию кнопки
     let onChangeStartValue = (startCount: number, endCount: number) => {
-        if (startCount >= endCount || startCount <= 0) {
+        if (startCount >= endCount || startCount < 0) {
             setError(!error)
+            setErrorMessage(!errorMessage)
         } else {
             setStartCount(startCount)
             setCounter(startCount)
         }
     }
     let onChangeEndValue = (startCount: number, endCount: number) => {
-        if (endCount <= 0 || endCount <= startCount) {
+        if (endCount < 0 || endCount <= startCount) {
             setError(!error)
+            setErrorMessage(!errorMessage)
         } else {
             setEndCount(endCount)
         }
@@ -94,6 +97,7 @@ function Counter() {
                 : <CounterSet startCount={startCount}
                               endCount={endCount}
                               error={error}
+                              errorMessage={errorMessage}
                               onChangeStartValue={onChangeStartValue}
                               onChangeEndValue={onChangeEndValue}
                               onChangeButton={set}
