@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import s from "./Counter.module.css";
 import CounterUI from "./CounterUI/CounterUI";
 import CounterSet from "./CounterSet/CounterSet";
-import MessageErrorText from "./MessageErrorText/MessageErrorText";
 
 
 function Counter() {
@@ -26,19 +25,23 @@ function Counter() {
     }
 
     // Вывод ошибки при срабатывании
-    let statusError = () => {
-
+    let onChangeStatusError = () => {
+        setError(!error)
     }
 
     // Изменение начального и конечного значения по нажатию кнопки
     let onChangeStartValue = (startCount: number, endCount: number) => {
-        if (startCount < endCount && startCount >= 0) {
+        if (startCount >= endCount || startCount <= 0) {
+            setError(!error)
+        } else {
             setStartCount(startCount)
             setCounter(startCount)
         }
     }
     let onChangeEndValue = (startCount: number, endCount: number) => {
-        if (endCount > startCount && endCount >= 1) {
+        if (endCount <= 0 || endCount <= startCount) {
+            setError(!error)
+        } else {
             setEndCount(endCount)
         }
     }
@@ -58,7 +61,7 @@ function Counter() {
 
     //Итерация счетчика
     const add = () => {
-        if (counter === endCount-1 || counter > endCount) {
+        if (counter === endCount - 1 || counter > endCount) {
             setCounter(counter + 1)
             setError(true)
         } else {
@@ -75,6 +78,10 @@ function Counter() {
         onChangeButton()
     };
 
+    const statusError = () => {
+        onChangeStatusError()
+    };
+
     return (
         <div className={s.counter}>
             {setting ?
@@ -84,12 +91,13 @@ function Counter() {
                            reset={reset}
                            onChangeButton={set}
                 />
-                :  <CounterSet startCount={startCount}
+                : <CounterSet startCount={startCount}
                               endCount={endCount}
                               error={error}
                               onChangeStartValue={onChangeStartValue}
                               onChangeEndValue={onChangeEndValue}
                               onChangeButton={set}
+                              statusError={statusError}
                 />
             }
         </div>
