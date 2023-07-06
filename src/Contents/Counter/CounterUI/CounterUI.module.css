@@ -21,6 +21,14 @@
     color: #65a3be;
 }
 
+.inputDisabled {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    font-size: 70px;
+    color: red;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
@@ -62,4 +70,5 @@
     font-size: 14px;
     color: #fff;
     background-color: #65a3be;
+    opacity: 50%;
 }
