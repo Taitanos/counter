@@ -11,10 +11,7 @@ function Stopwatch() {
             interval = window.setInterval(() => {
                 setTime((prevTime) => prevTime + 10);
             }, 10);
-        } else if (!running) {
-            clearInterval(interval);
-        }
-        return () => clearInterval(interval);
+        } return () => clearInterval(interval);
     }, [running]);
     return (
         <div className={s.stopwatch}>
@@ -24,9 +21,9 @@ function Stopwatch() {
                 <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
             </div>
             <div className={s.buttons}>
-                <button onClick={() => setRunning(true)}>Start</button>
-                <button onClick={() => setRunning(false)}>Stop</button>
-                <button onClick={() => setTime(0)}>Reset</button>
+                <button className={s.button} onClick={() => setRunning(true)}>Start</button>
+                <button className={s.button} onClick={() => setRunning(false)}>Stop</button>
+                <button className={s.button} onClick={() => setTime(0)}>Reset</button>
             </div>
         </div>
     );
